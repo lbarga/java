@@ -6,6 +6,7 @@ import br.com.erudio.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.module.ResolutionException;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
@@ -32,21 +33,23 @@ public class PersonServices {
         return personRepository.findAll();
     }
 
-    public Person findById(String id) {
+    public Person findById(Long id) {
         logger.info("finding one person.");
 
-        Person person = new Person();
-        person.setId(counter.incrementAndGet());
-        person.setFirstName("Leandro");
-        person.setLastName("Costa");
-        person.setAddress("Uberlândia - Minas Gerais - Brasil");
-        person.setGender("Male");
-
-        return person;
+        return personRepository.findById(id).orElseThrow(() -> {
+                    logger.info("person not found.");
+                    throw new ResolutionException("person not found.");
+                }
+        );
     }
 
     public Person create(Person person) {
         logger.info("creating a person.");
+
+        if (person.getId() != null && personRepository.existsById(person.getId())) {
+            logger.info("person already exists.");
+            throw new IllegalArgumentException();
+        }
 
         return personRepository.save(person);
     }
@@ -54,11 +57,30 @@ public class PersonServices {
     public Person update(Person person) {
         logger.info("updating a person.");
 
-        return person;
+        Person currentPerson = personRepository.findById(person.getId()).orElseThrow(() -> {
+                    logger.info("no records found for this ID.");
+                    throw new ResolutionException("no records found for this ID.");
+                }
+        );
+
+        currentPerson.setFirstName(person.getFirstName());
+        currentPerson.setLastName(person.getLastName());
+        currentPerson.setAddress(person.getAddress());
+        currentPerson.setGender(person.getGender());
+
+        return personRepository.save(person);
     }
 
-    public void delete(String id) {
+    public void delete(Long id) {
         logger.info("deleting a person.");
+
+        Person currentPerson = personRepository.findById(id).orElseThrow(() -> {
+                    logger.info("no records found for this ID.");
+                    throw new ResolutionException("no records found for this ID.");
+                }
+        );
+
+        personRepository.delete(currentPerson);
     }
 
 }
