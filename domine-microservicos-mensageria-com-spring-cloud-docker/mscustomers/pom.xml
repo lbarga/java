@@ -11,7 +11,7 @@
     <groupId>io.github.springcloud</groupId>
     <artifactId>mscustomer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>msclients</name>
+    <name>mscustomers</name>
     <description>Clients Microservice</description>
     <properties>
         <java.version>11</java.version>

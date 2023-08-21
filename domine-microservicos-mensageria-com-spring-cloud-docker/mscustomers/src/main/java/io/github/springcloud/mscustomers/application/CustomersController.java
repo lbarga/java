@@ -4,6 +4,7 @@ import io.github.springcloud.mscustomers.application.representation.CustomerSave
 import io.github.springcloud.mscustomers.application.service.CustormersService;
 import io.github.springcloud.mscustomers.domain.Customer;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -12,11 +13,18 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("customers")
 @RequiredArgsConstructor
+@Slf4j
 public class CustomersController {
 
     private final CustormersService custormersService;
+
+    @GetMapping("/status")
+    public String ping() {
+        log.info("===return status ok===");
+        return "ok";
+    }
 
     @PostMapping
     public ResponseEntity save(@RequestBody CustomerSaveRequest request) {
