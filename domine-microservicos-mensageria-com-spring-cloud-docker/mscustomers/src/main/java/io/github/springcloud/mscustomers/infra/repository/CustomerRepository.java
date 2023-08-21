@@ -1,6 +1,6 @@
-package io.github.springcloud.msclients.infra.repository;
+package io.github.springcloud.mscustomers.infra.repository;
 
-import io.github.springcloud.msclients.domain.Customer;
+import io.github.springcloud.mscustomers.domain.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

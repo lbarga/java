@@ -1,8 +1,8 @@
-package io.github.springcloud.msclients.application;
+package io.github.springcloud.mscustomers.application;
 
-import io.github.springcloud.msclients.application.representation.CustomerSaveRequest;
-import io.github.springcloud.msclients.application.service.CustormersService;
-import io.github.springcloud.msclients.domain.Customer;
+import io.github.springcloud.mscustomers.application.representation.CustomerSaveRequest;
+import io.github.springcloud.mscustomers.application.service.CustormersService;
+import io.github.springcloud.mscustomers.domain.Customer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,4 +1,4 @@
-package io.github.springcloud.msclients;
+package io.github.springcloud.mscustomers;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

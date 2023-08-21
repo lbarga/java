@@ -1,4 +1,4 @@
-package io.github.springcloud.msclients.domain;
+package io.github.springcloud.mscustomers.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

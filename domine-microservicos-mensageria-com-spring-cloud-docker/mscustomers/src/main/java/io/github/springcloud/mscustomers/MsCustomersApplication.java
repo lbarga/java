@@ -1,4 +1,4 @@
-package io.github.springcloud.msclients;
+package io.github.springcloud.mscustomers;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,7 +1,7 @@
-package io.github.springcloud.msclients.application.service;
+package io.github.springcloud.mscustomers.application.service;
 
-import io.github.springcloud.msclients.domain.Customer;
-import io.github.springcloud.msclients.infra.repository.CustomerRepository;
+import io.github.springcloud.mscustomers.domain.Customer;
+import io.github.springcloud.mscustomers.infra.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

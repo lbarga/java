@@ -1,6 +1,6 @@
-package io.github.springcloud.msclients.application.representation;
+package io.github.springcloud.mscustomers.application.representation;
 
-import io.github.springcloud.msclients.domain.Customer;
+import io.github.springcloud.mscustomers.domain.Customer;
 import lombok.Data;
 
 // representation or DTO class
