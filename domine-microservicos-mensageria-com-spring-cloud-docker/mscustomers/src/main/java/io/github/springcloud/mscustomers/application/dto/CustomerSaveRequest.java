@@ -1,4 +1,4 @@
-package io.github.springcloud.mscustomers.application.representation;
+package io.github.springcloud.mscustomers.application.dto;
 
 import io.github.springcloud.mscustomers.domain.Customer;
 import lombok.Data;
