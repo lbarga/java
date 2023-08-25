@@ -25,6 +25,7 @@ public class MscloudgatewayApplication {
 				.routes()
 					.route( r -> r.path("/customers/**").uri("lb://mscustomers") )
 					.route( r -> r.path("/credit-cards/**").uri("lb://mscreditcards") )
+					.route( r -> r.path("/credit-evaluator/**").uri("lb://mscreditevaluator") )
 				.build();
 	}
 

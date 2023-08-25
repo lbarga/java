@@ -42,11 +42,11 @@ public class CreditCardsController {
         return ResponseEntity.ok(creditCards);
     }
 
-    //    CONTINUE THIS IMPLEMENTATION LATER LIST CREDIT CARDS BY CPF
-    //    @GetMapping(params = "cpf")
-    //    public ResponseEntity getListCustomerCreditCardByCpf(@RequestParam String cpf) {
-    //        List<CustomerCreditCard> creditCards = customerCreditCardService.listCustomerCreditCardByCpf(cpf);
-    //
-    //        return ResponseEntity.ok(creditCards);
-    //    }
+    @GetMapping(params = "cpf")
+    public ResponseEntity getCreditCardsByCustomerCpf(@RequestParam String cpf) {
+        // TODO: implement get credit cards by customer cpf
+        List<CreditCard> creditCards = creditCardService.getCreditCardsIncomeLessThan(10000L);
+
+        return ResponseEntity.ok(creditCards);
+    }
 }
